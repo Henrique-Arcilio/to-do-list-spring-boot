@@ -11,7 +11,6 @@ body{
 
 .account-management-content{
     width: 400px;
-    height: 400px;
     background: #cec7ff;
     border: 1px solid;
 }
@@ -42,7 +41,7 @@ h1{
     margin-top: 0;
     height: 50px;
 }
-.actions #login{
+.actions .confirm-button{
     font-size: 20px;
     display: block;
 }
@@ -52,5 +51,5 @@ h1{
     align-items: center;
     justify-content: center;
     gap: 50px;
-    margin-top: 20px;
+    margin: 40px 0;
 }

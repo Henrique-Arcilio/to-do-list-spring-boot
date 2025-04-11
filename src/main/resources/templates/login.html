@@ -1,29 +1,31 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Login Page</title>
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-    <div class="account-management">
-        <div class="account-management-content">
-            <h1>Login</h1>
-            <div class="fields">
-                <div class="row">
-                    <label for="email">E-mail</label>
-                    <input name="email" id="email">
+    <form action="/login" method="POST">
+        <div class="account-management">
+            <div class="account-management-content">
+                <h1>Login</h1>
+                <div class="fields">
+                    <div class="row">
+                        <label for="email">E-mail</label>
+                        <input name="email" id="email">
+                    </div>
+                    <div class="row">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password">
+                    </div>
                 </div>
-                <div class="row">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password">
+                <div class="actions">
+                    <button class="confirm-button">login</button>
+                    <a href="create-account.html">Create Account</a>
                 </div>
-            </div>
-            <div class="actions">
-                <button id="login">login</button>
-                <a href="http://www.youtube.com">criar conta</a>
             </div>
         </div>
-    </div>
+    </form>
 </body>
 </html>

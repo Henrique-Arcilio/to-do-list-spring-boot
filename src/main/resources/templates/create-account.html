@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <form action="/create" method="post">
+    <div class="account-management">
+      <div class="account-management-content">
+        <h1>Create Account</h1>
+        <div class="fields">
+          <div class="row">
+            <label for="nick">Username</label>
+            <input name="nick" id="nick">
+          </div>
+          <div class="row">
+            <label for="email">E-mail</label>
+            <input name="email" id="email">
+          </div>
+          <div class="row">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password">
+          </div>
+          <div class="row">
+            <label for="passwordConfirm">Confirm Password</label>
+            <input type="password" name="passwordConfirm" id="passwordConfirm">
+          </div>
+        </div>
+        <div class="actions">
+          <button class="confirm-button">Create</button>
+          <a href="login.html">Sign in</a>
+        </div>
+      </div>
+    </div>
+  </form>
+</body>
+</html>
