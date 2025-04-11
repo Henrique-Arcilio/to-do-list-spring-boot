@@ -1,0 +1,56 @@
+body{
+    background: #201829;
+    font-family: Arial;
+}
+.account-management{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.account-management-content{
+    width: 400px;
+    height: 400px;
+    background: #cec7ff;
+    border: 1px solid;
+}
+
+.fields{
+    margin-top: 50px;
+}
+.row{
+    text-align: center;
+    margin-top: 20px;
+}
+label{
+    display: block;
+}
+
+input{
+    width: 80%;
+    font-size: 20px;
+}
+
+label{
+    margin: 20px;
+    font-size: 25px;
+}
+h1{
+    background: #f2f1fb;
+    text-align: center;
+    margin-top: 0;
+    height: 50px;
+}
+.actions #login{
+    font-size: 20px;
+    display: block;
+}
+
+.actions{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 20px;
+}
