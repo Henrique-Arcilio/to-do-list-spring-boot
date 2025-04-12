@@ -6,26 +6,27 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <form action="/login" method="post">
+  <form action="/save-account" method="post" th:object="${user}">
     <div class="account-management">
       <div class="account-management-content">
         <h1>Create Account</h1>
         <div class="fields">
           <div class="row">
             <label for="nick">Username</label>
-            <input name="nick" id="nick">
+            <input name="nick" id="nick" th:field="*{username}">
           </div>
           <div class="row">
             <label for="email">E-mail</label>
-            <input name="email" id="email">
+            <input name="email" id="email" th:field="*{email}">
           </div>
           <div class="row">
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password">
+            <p th:text="${error}" style="color:red"></p>
+            <label for="password" >Password</label>
+            <input  type="password" name="password" id="password" th:field="*{password}" required>
           </div>
           <div class="row">
             <label for="passwordConfirm">Confirm Password</label>
-            <input type="password" name="passwordConfirm" id="passwordConfirm">
+            <input type="password" name="passwordConfirm" id="passwordConfirm" required>
           </div>
         </div>
         <div class="actions">
