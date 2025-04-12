@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Sign Up Page</title>
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <form action="/create" method="post">
+  <form action="/login" method="post">
     <div class="account-management">
       <div class="account-management-content">
         <h1>Create Account</h1>
@@ -30,7 +30,7 @@
         </div>
         <div class="actions">
           <button class="confirm-button">Create</button>
-          <a href="login.html">Sign in</a>
+          <a th:href="@{/login}">Sign in</a>
         </div>
       </div>
     </div>

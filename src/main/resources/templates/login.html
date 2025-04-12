@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Login Page</title>
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <form action="/login" method="POST">
@@ -22,7 +22,7 @@
                 </div>
                 <div class="actions">
                     <button class="confirm-button">login</button>
-                    <a href="create-account.html">Create Account</a>
+                    <a th:href="@{/create-account}">Create Account</a>
                 </div>
             </div>
         </div>
