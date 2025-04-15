@@ -3,9 +3,7 @@ package com.henrique.to_do_list.Controller;
 
 import com.henrique.to_do_list.Exception.Registration.PasswordDoesntMatchException;
 import com.henrique.to_do_list.Model.User;
-import com.henrique.to_do_list.Repository.UserRepository;
 import com.henrique.to_do_list.Service.RegistrationValidationService;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;

@@ -22,4 +22,8 @@ public class AccountController {
         model.addAttribute("user", new User());
         return "create-account";
     }
+    @GetMapping("/home")
+    public String showHome(){
+        return "home";
+    }
 }

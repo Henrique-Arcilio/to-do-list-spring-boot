@@ -1,0 +1,17 @@
+
+body{
+    font-family: Arial;
+    color: #2c2c7b;
+    background: #201829;
+}
+.head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content-head{
+    text-align: center;
+    background: #cec7ff;
+    width: 60%;
+    align-content: center;
+}

@@ -8,10 +8,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class RegistrationValidationService {
-
+    private PasswordEncoder passwordEncoder;
     private UserRepository userRepository;
 
-    public RegistrationValidationService(UserRepository userRepository) {
+    public RegistrationValidationService(PasswordEncoder passwordEncoder, UserRepository userRepository) {
+        this.passwordEncoder = passwordEncoder;
         this.userRepository = userRepository;
     }
 
@@ -22,6 +23,8 @@ public class RegistrationValidationService {
                 throw new PasswordDoesntMatchException("The passwords doesnt match");
             }
         }
+        String encriptedPassword = passwordEncoder.encode(user.getPassword());
+        user.setPassword(encriptedPassword);
         userRepository.save(user);
     }
 }
