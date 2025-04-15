@@ -5,6 +5,7 @@ import com.henrique.to_do_list.Exception.Registration.PasswordDoesntMatchExcepti
 import com.henrique.to_do_list.Model.User;
 import com.henrique.to_do_list.Repository.UserRepository;
 import com.henrique.to_do_list.Service.RegistrationValidationService;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -14,12 +15,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class RegistrationController {
 
-    private final UserRepository userRepository;
     private final RegistrationValidationService validationService;
 
-    public RegistrationController(UserRepository userRepository,
-                                  RegistrationValidationService validationService){
-        this.userRepository = userRepository;
+    public RegistrationController(RegistrationValidationService validationService){
         this.validationService = validationService;
     }
 
@@ -29,7 +27,7 @@ public class RegistrationController {
                            @RequestParam String passwordConfirm, Model model){
         try{
             validationService.isPasswordValid(user, passwordConfirm);
-            userRepository.save(user);
+
         }catch (PasswordDoesntMatchException exception){
             model.addAttribute("error", "Passwords doesn't match" );
             return "create-account";
