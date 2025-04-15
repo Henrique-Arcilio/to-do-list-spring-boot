@@ -18,6 +18,11 @@ public class ToDoList {
     private String name;
     @Column(length = 400, nullable = true)
     private String description;
+
     @OneToMany(mappedBy = "toDoList") //saying that it's not a column
     private List<Task> Tasks = new ArrayList<>();
+
+    @ManyToOne
+    @JoinColumn(name = "fk_user")
+    private User user;
 }

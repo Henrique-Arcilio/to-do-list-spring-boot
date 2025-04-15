@@ -42,6 +42,6 @@ public class Task {
     private PriorityLevel priority;
 
     @ManyToOne
-    @JoinColumn(name = "id_todolist")
+    @JoinColumn(name = "fk_todolist")
     private ToDoList toDoList;
 }

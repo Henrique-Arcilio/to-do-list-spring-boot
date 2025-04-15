@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
 import java.util.UUID;
 
 
@@ -26,6 +28,9 @@ public class User {
 
     @Column(name = "password", length = 100, nullable = false)
     private String password;
+
+    @OneToMany(mappedBy = "user")
+    private List<ToDoList> userLists;
 
     public User(String username, String email, String password) {
         this.username = username;
