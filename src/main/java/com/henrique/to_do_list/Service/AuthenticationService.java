@@ -3,7 +3,6 @@ package com.henrique.to_do_list.Service;
 import com.henrique.to_do_list.Exception.Authentication.IncorrectPasswordException;
 import com.henrique.to_do_list.Exception.Authentication.UnknownEmailException;
 import com.henrique.to_do_list.Model.User;
-import com.henrique.to_do_list.Model.UserSession;
 import com.henrique.to_do_list.Repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

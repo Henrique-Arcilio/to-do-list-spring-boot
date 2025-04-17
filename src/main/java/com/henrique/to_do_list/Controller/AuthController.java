@@ -3,7 +3,6 @@ package com.henrique.to_do_list.Controller;
 import com.henrique.to_do_list.Exception.Authentication.AuthenticationException;
 import com.henrique.to_do_list.Model.User;
 import com.henrique.to_do_list.Repository.ToDoListRepository;
-import com.henrique.to_do_list.Repository.UserRepository;
 import com.henrique.to_do_list.Service.AuthenticationService;
 import com.henrique.to_do_list.Model.UserSession;
 import org.springframework.stereotype.Controller;
