@@ -10,7 +10,7 @@
     <div class="main-title">
       <div id="first-title" class="main-title-content">
         <h1>Welcome</h1>
-        <a href="/login" style="float: right" >Logout</a>
+        <a href="/logout" style="float: right" >Logout</a>
           <br>
       </div>
     </div>
@@ -20,14 +20,14 @@
             <h2>Create a new</h2>
             <div id="todo-creation">
                 <div id="todo-creation-content" >
-                    <form>
+                    <form method="POST" action="/home/create-new-list">
                         <div class="creation-row">
                             <label for="name">Name</label>
-                            <input id="name">
+                            <input id="name", name="name">
                         </div>
                         <div class="creation-row">
                             <label for="description">Description</label>
-                            <textarea id="description"></textarea>
+                            <textarea id="description", name="description"></textarea>
                         </div>
                         <button id="list-creation-button">Create</button>
                     </form>
@@ -37,7 +37,7 @@
 
             <h2>Your To-Do Lists</h2>
             <div id="lists-area">
-                <div id="user-lists" th:each="list: ${todolists}">
+                <div id="user-lists" th:each="list: ${userTodoLists}">
                     <details>
                         <summary class="lists-title">
                             <span th:text="${list.name}"></span>
