@@ -4,14 +4,48 @@ body{
     color: #2c2c7b;
     background: #201829;
 }
-.head{
+.main-title{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.content-head{
+.main-title-content{
     text-align: center;
-    background: #cec7ff;
     width: 60%;
     align-content: center;
+}
+#first-title{
+    background: #cec7ff;
+}
+#second-title{
+    background: #b6adfb;
+}
+#lists-area{
+    margin-top: 50px;
+}
+
+#user-lists{
+    text-align: justify;
+    border: 5px solid;
+    margin: 15px 0;
+}
+
+.description{
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+#todo-creation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+#todo-creation-content{
+    width: 400px;
+    background: #cec7ff;
+    border: 1px solid;
+}
+label{
+    display: block;
 }

@@ -3,20 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
-    <link rel="stylesheet" href="../static/css/home.css">
+    <link rel="stylesheet" href="/css/home.css">
 </head>
 
 <body>
-<div class="head">
-  <div class="content-head">
-    <h1></h1>
-    <a href="/login" style="float: right" >Logout</a>
-  </div>
-    <div>
-        <div>
-            <h2>Your To-Do Lists:</h2>
+    <div class="main-title">
+      <div id="first-title" class="main-title-content">
+        <h1>Welcome</h1>
+        <a href="/login" style="float: right" >Logout</a>
+          <br>
+      </div>
+    </div>
+
+    <div class="main-title">
+        <div id="second-title" class="main-title-content">
+            <h2>Create a new</h2>
+            <div id="todo-creation">
+                <div id="todo-creation-content" >
+                    <form>
+                        <div class="creation-row">
+                            <label for="name">Name</label>
+                            <input id="name">
+                        </div>
+                        <div class="creation-row">
+                            <label for="description">Description</label>
+                            <textarea id="description"></textarea>
+                        </div>
+                        <button id="list-creation-button">Create</button>
+                    </form>
+                </div>
+
+            </div>
+
+            <h2>Your To-Do Lists</h2>
+            <div id="lists-area">
+                <div id="user-lists" th:each="list: ${todolists}">
+                    <details>
+                        <summary class="lists-title">
+                            <span th:text="${list.name}"></span>
+                            <button class="edit-button" id="list-edit-button">📝</button>
+                            <button class="delete-button" id="list-deletion-button">❌</button>
+                        </summary>
+                        <div class="description" th:text="${list.description}"></div>
+                    </details>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+
 </body>
 </html>
