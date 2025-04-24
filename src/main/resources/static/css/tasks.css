@@ -1,0 +1,53 @@
+.description{
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+.head-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content-area{
+    width: 80%;
+    background: #cec7ff;
+    border: 1px solid;
+}
+.row{
+    text-align: center;
+    margin-top: 20px;
+}
+label{
+    display: block;
+}
+.creation-button{
+    margin-top: 20px;
+    text-align: center;
+}
+h2{
+    display: block;
+    background: #b6adfb;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+    background-color: #007BFF;
+    color: white;
+}
+
+
+td:hover {
+    background-color: #f1f1f1;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}

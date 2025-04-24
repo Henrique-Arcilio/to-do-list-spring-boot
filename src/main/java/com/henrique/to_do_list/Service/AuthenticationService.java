@@ -4,6 +4,7 @@ import com.henrique.to_do_list.Exception.Authentication.IncorrectPasswordExcepti
 import com.henrique.to_do_list.Exception.Authentication.UnknownEmailException;
 import com.henrique.to_do_list.Model.User;
 import com.henrique.to_do_list.Repository.UserRepository;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +20,7 @@ public class AuthenticationService {
         this.userRepository = userRepository;
     }
 
-    public User Authenticate(String email, String password) throws IncorrectPasswordException, UnknownEmailException {
+    public User authenticate(String email, String password) throws IncorrectPasswordException, UnknownEmailException {
         Optional<User> optionalUser = userRepository.findByEmail(email);
 
         if(optionalUser.isPresent()){

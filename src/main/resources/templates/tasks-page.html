@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/tasks.css">
+</head>
+  <body>
+  <div class="head-area">
+    <div class="content-area">
+      <h2>Create Task</h2>
+      <form method="post" th:action="@{'/home/edit/' + ${id} + '/create-task'}">
+        <div class="row">
+          <label for="name">Name</label>
+          <input id="name" name="name">
+        </div>
+        <div class="row">
+          <label for="description">Description</label>
+          <textarea class="description" id="description" name="description"></textarea>
+        </div>
+        <div class="row">
+          <label for="startDate">Start Date</label>
+          <input type="date" id="startDate" name="startDate">
+        </div>
+        <div class="row">
+          <label for="endDate">End Date</label>
+          <input type="date" id="endDate" name="endDate">
+        </div>
+
+        <div class="row" th:with="Types=${T(com.henrique.to_do_list.Model.PriorityLevel)}">
+          <label for="priority">Priority</label>
+          <select id="priority" name="priority">
+            <option name=priority th:each="priority : ${Types.values()}"
+              th:value="${priority}"
+              th:text="${priority}">
+            </option>
+          </select>
+        </div>
+
+        <div class="creation-button">
+          <button >Create Task</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+    <div class="head-area">
+
+      <div class="content-area" th:object="${toDoList}">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Start Date</th>
+              <th scope="col">End Date</th>
+            </tr>
+          </thead>
+          <tbody th:each="task : ${toDoList.tasks}">
+            <tr>
+              <td>
+                <form method="post" th:action="@{'/home/edit/' + ${id} + '/check-task/' + ${task.id}}">
+                  <input type="checkbox" name="complete" th:checked="${task.completed}">
+                </form>
+              </td>
+              <td th:text="${task.name}"></td>
+              <td th:text="${task.startDate}"></td>
+              <td th:text="${task.endDate}"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </body>
+</html>

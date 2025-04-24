@@ -19,15 +19,15 @@
         <div id="second-title" class="main-title-content">
             <h2>Create a new</h2>
             <div id="todo-creation">
-                <div id="todo-creation-content" >
+                <div id="todo-creation-content">
                     <form method="POST" action="/home/create-new-list">
                         <div class="creation-row">
                             <label for="name">Name</label>
-                            <input id="name", name="name">
+                            <input id="name" name="name">
                         </div>
                         <div class="creation-row">
                             <label for="description">Description</label>
-                            <textarea id="description", name="description"></textarea>
+                            <textarea id="description" name="description"></textarea>
                         </div>
                         <button id="list-creation-button">Create</button>
                     </form>
@@ -41,8 +41,8 @@
                     <details>
                         <summary class="lists-title">
                             <span th:text="${list.name}"></span>
-                            <button class="edit-button" id="list-edit-button">📝</button>
-                            <button class="delete-button" id="list-deletion-button">❌</button>
+                            <a th:href="@{/home/edit/{id}(id=${list.id})}" class="edit-button">📝</a>
+                            <a th:href="@{/home/delete/{id}(id=${list.id})}" class="delete-button">❌</a>
                         </summary>
                         <div class="description" th:text="${list.description}"></div>
                     </details>

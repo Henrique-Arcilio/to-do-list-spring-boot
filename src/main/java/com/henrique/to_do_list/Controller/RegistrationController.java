@@ -27,7 +27,7 @@ public class RegistrationController {
             validationService.isPasswordValid(user, passwordConfirm);
 
         }catch (PasswordDoesntMatchException exception){
-            model.addAttribute("error", "Passwords doesn't match" );
+            model.addAttribute("error", exception.getMessage());
             return "create-account";
         }
         return "redirect:/login";

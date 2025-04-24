@@ -27,7 +27,7 @@ public class AuthController {
     public String signInUser(@RequestParam String email, @RequestParam String password,
                              Model model){
         try{
-            User user = authenticator.Authenticate(email, password);
+            User user = authenticator.authenticate(email, password);
             userSession.setUser(user);
             userSession.setTarefas(toDoListRepository.findAllByUser(user));
         }
