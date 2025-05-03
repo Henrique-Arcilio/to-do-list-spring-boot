@@ -46,24 +46,26 @@
   </div>
 
     <div class="head-area">
-
-      <div class="content-area" th:object="${toDoList}">
+      <div id="tasks-table-div" class="content-area">
         <table>
           <thead>
             <tr>
+              <th id="check-column"></th>
               <th scope="col">Name</th>
+              <th scope="col">Description</th>
               <th scope="col">Start Date</th>
               <th scope="col">End Date</th>
             </tr>
           </thead>
-          <tbody th:each="task : ${toDoList.tasks}">
+          <tbody th:each="task : ${incompleteTasks}">
             <tr>
               <td>
-                <form method="post" th:action="@{'/home/edit/' + ${id} + '/check-task/' + ${task.id}}">
-                  <input type="checkbox" name="complete" th:checked="${task.completed}">
+                <form method="get" th:action="@{'/home/edit/' + ${id} + '/check-task/' + ${task.id}}">
+                  <input type="checkbox" name="complete" onchange="this.form.submit()" th:checked="${task.completed}">
                 </form>
               </td>
               <td th:text="${task.name}"></td>
+              <td th:text="${task.description}"></td>
               <td th:text="${task.startDate}"></td>
               <td th:text="${task.endDate}"></td>
             </tr>

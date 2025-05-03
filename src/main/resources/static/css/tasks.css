@@ -29,13 +29,14 @@ h2{
     background: #b6adfb;
     text-align: center;
 }
-
+#tasks-table-div{
+    margin-top: 20px;
+}
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 1rem;
     font-family: Arial, sans-serif;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    table-layout: fixed;
 }
 
 thead {
@@ -44,8 +45,13 @@ thead {
 }
 
 
-td:hover {
+td {
     background-color: #f1f1f1;
+    border: 1px solid;
+    text-align: center;
+}
+#check-column{
+    width: 30px;
 }
 
 input[type="checkbox"] {

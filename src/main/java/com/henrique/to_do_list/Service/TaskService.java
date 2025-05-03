@@ -9,6 +9,8 @@ import com.henrique.to_do_list.Repository.ToDoListRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -22,6 +24,28 @@ public class TaskService {
         this.toDoListRepository = toDoListRepository;
     }
 
+    public List<Task> getTasksToDo(UUID listId){
+        Optional<ToDoList> opTodoList = toDoListRepository.findById(listId);
+        if(opTodoList.isPresent()){
+            List<Task> incompleteTasks = new ArrayList<>();
+            for(Task task : opTodoList.get().getTasks()){
+                if(!task.isCompleted()){
+                    incompleteTasks.add(task);
+                }
+            }
+            return incompleteTasks;
+        }
+        return null;
+    }
+    public void markTaskAsCompleted(UUID id) {
+        Optional<Task> opTask = taskRepository.findById(id);
+        if (opTask.isPresent()) {
+            Task task = opTask.get();
+            task.setCompleted(true);
+            task.setCompletionDate(LocalDate.now());
+            taskRepository.save(task);
+        }
+    }
     public void createTask(UUID todoListId, String name, String description, LocalDate startDate, LocalDate endDate, PriorityLevel priorityLevel){
         Task task = new Task();
         task.setName(name);
